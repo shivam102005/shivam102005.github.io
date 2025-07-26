@@ -1,1 +1,192 @@
-<h1>Welcome to my Profile</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shivam's Profile</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #4CAF50;
+      --secondary-color: #f4f4f4;
+      --text-color: #333;
+      --accent-color: #2196F3;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--secondary-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--primary-color);
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background: white;
+      padding: 1rem;
+      gap: 2rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--primary-color);
+      font-weight: 500;
+      position: relative;
+      transition: color 0.3s ease-in-out;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: var(--accent-color);
+      left: 0;
+      bottom: -5px;
+      transition: 0.3s;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    nav a:hover {
+      color: var(--accent-color);
+    }
+
+    .container {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .about {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .about img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      margin-bottom: 1rem;
+    }
+
+    .about h2 {
+      font-size: 2rem;
+      color: var(--primary-color);
+    }
+
+    .skills {
+      margin-top: 3rem;
+    }
+
+    .skills h3 {
+      margin-bottom: 1rem;
+      color: var(--accent-color);
+    }
+
+    .skill-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+    }
+
+    .skill-grid div {
+      background: white;
+      padding: 1rem;
+      border-radius: 10px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s;
+    }
+
+    .skill-grid div:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      margin-top: 3rem;
+      background: var(--primary-color);
+      color: white;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Shivam Singh</h1>
+    <p>Aspiring AI & Data Science Engineer</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="container">
+    <section class="about" id="about">
+      <img src="https://via.placeholder.com/150" alt="Profile Picture">
+      <h2>Hello, I'm Shivam</h2>
+      <p>I am a BTech student specializing in AI and Data Science. I’m passionate about building intelligent systems and solving real-world problems with data-driven solutions.</p>
+    </section>
+
+    <section class="skills" id="skills">
+      <h3>My Skills</h3>
+      <div class="skill-grid">
+        <div>Python</div>
+        <div>SQL</div>
+        <div>Machine Learning</div>
+        <div>React.js</div>
+        <div>Streamlit</div>
+        <div>Google Cloud</div>
+      </div>
+    </section>
+  </div>
+
+  <footer id="contact">
+    <p>📧 shivam@example.com | 🌐 www.linkedin.com/in/shivamsingh</p>
+    <p>© 2025 Shivam Singh</p>
+  </footer>
+
+</body>
+</html>
+
