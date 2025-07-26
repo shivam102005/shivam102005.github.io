@@ -3,148 +3,175 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Shivam's Profile</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <title>Shivam Singh - Profile</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary-color: #4CAF50;
-      --secondary-color: #f4f4f4;
-      --text-color: #333;
-      --accent-color: #2196F3;
+      --main-bg: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      --card-glow: #00ffe0;
+      --primary: #00bcd4;
+      --accent: #ff4081;
+      --white: #ffffff;
     }
 
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      scroll-behavior: smooth;
     }
 
     body {
       font-family: 'Poppins', sans-serif;
-      background: var(--secondary-color);
-      color: var(--text-color);
-      line-height: 1.6;
+      background: var(--main-bg);
+      color: var(--white);
+      min-height: 100vh;
     }
 
     header {
-      background: var(--primary-color);
-      color: white;
-      padding: 2rem 1rem;
       text-align: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      padding: 3rem 1rem;
+      background: transparent;
+      animation: fadeIn 1.5s ease-in-out;
     }
 
     header h1 {
-      font-size: 2.5rem;
+      font-size: 3rem;
+      font-family: 'Orbitron', sans-serif;
+      color: var(--primary);
+      text-shadow: 0 0 10px var(--primary);
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #ccc;
     }
 
     nav {
       display: flex;
       justify-content: center;
-      background: white;
-      padding: 1rem;
       gap: 2rem;
+      padding: 1rem;
+      background: rgba(0,0,0,0.4);
+      backdrop-filter: blur(5px);
     }
 
     nav a {
       text-decoration: none;
-      color: var(--primary-color);
-      font-weight: 500;
-      position: relative;
-      transition: color 0.3s ease-in-out;
-    }
-
-    nav a::after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 2px;
-      background: var(--accent-color);
-      left: 0;
-      bottom: -5px;
-      transition: 0.3s;
-    }
-
-    nav a:hover::after {
-      width: 100%;
+      color: var(--white);
+      padding: 0.5rem 1rem;
+      border: 2px solid transparent;
+      border-radius: 20px;
+      transition: all 0.4s ease;
     }
 
     nav a:hover {
-      color: var(--accent-color);
+      border-color: var(--accent);
+      background: var(--accent);
+      color: black;
     }
 
     .container {
-      padding: 2rem;
       max-width: 1000px;
       margin: auto;
+      padding: 2rem;
+      animation: slideIn 1.5s ease;
     }
 
     .about {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
       text-align: center;
-      animation: fadeIn 2s ease-in-out;
+      margin-top: 2rem;
     }
 
-    .about img {
-      width: 150px;
-      height: 150px;
+    .profile-pic {
+      width: 160px;
+      height: 160px;
       border-radius: 50%;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      border: 4px solid var(--card-glow);
+      box-shadow: 0 0 20px var(--card-glow);
       margin-bottom: 1rem;
+      transition: transform 0.4s ease;
+    }
+
+    .profile-pic:hover {
+      transform: scale(1.05);
     }
 
     .about h2 {
-      font-size: 2rem;
-      color: var(--primary-color);
+      color: var(--accent);
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
     }
 
-    .skills {
-      margin-top: 3rem;
+    .about p {
+      color: #ddd;
+      font-size: 1rem;
+      max-width: 700px;
+      margin: auto;
     }
 
-    .skills h3 {
-      margin-bottom: 1rem;
-      color: var(--accent-color);
+    .section-title {
+      text-align: center;
+      font-size: 1.8rem;
+      margin-top: 4rem;
+      color: var(--primary);
+      text-shadow: 0 0 10px var(--primary);
     }
 
     .skill-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
     }
 
-    .skill-grid div {
-      background: white;
+    .skill-card {
+      background: rgba(255,255,255,0.05);
+      border: 2px solid var(--primary);
       padding: 1rem;
-      border-radius: 10px;
       text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s;
+      border-radius: 15px;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 10px rgba(0,255,255,0.2);
     }
 
-    .skill-grid div:hover {
+    .skill-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      box-shadow: 0 0 20px var(--primary);
+      border-color: var(--accent);
+    }
+
+    .skill-card span {
+      font-size: 1.1rem;
+      color: #f1f1f1;
     }
 
     footer {
+      margin-top: 4rem;
+      padding: 1.5rem;
       text-align: center;
-      padding: 1rem;
-      margin-top: 3rem;
-      background: var(--primary-color);
-      color: white;
+      background: rgba(0,0,0,0.6);
+      color: #ccc;
+      font-size: 0.95rem;
     }
 
+    /* Animations */
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
+      from { opacity: 0; transform: translateY(-20px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(-50px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
     @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
       nav {
         flex-direction: column;
-        align-items: center;
       }
     }
   </style>
@@ -164,29 +191,28 @@
 
   <div class="container">
     <section class="about" id="about">
-      <img src="https://via.placeholder.com/150" alt="Profile Picture">
+      <img src="https://via.placeholder.com/160" alt="Profile Picture" class="profile-pic">
       <h2>Hello, I'm Shivam</h2>
-      <p>I am a BTech student specializing in AI and Data Science. I’m passionate about building intelligent systems and solving real-world problems with data-driven solutions.</p>
+      <p>I’m a BTech student specializing in Artificial Intelligence and Data Science. I love solving real-world problems using code, data, and creative thinking. I'm currently exploring machine learning, full-stack web development, and cloud computing.</p>
     </section>
 
-    <section class="skills" id="skills">
-      <h3>My Skills</h3>
+    <section id="skills">
+      <h3 class="section-title">Tech Stack</h3>
       <div class="skill-grid">
-        <div>Python</div>
-        <div>SQL</div>
-        <div>Machine Learning</div>
-        <div>React.js</div>
-        <div>Streamlit</div>
-        <div>Google Cloud</div>
+        <div class="skill-card"><span>Python</span></div>
+        <div class="skill-card"><span>SQL</span></div>
+        <div class="skill-card"><span>React.js</span></div>
+        <div class="skill-card"><span>Streamlit</span></div>
+        <div class="skill-card"><span>Google Cloud</span></div>
+        <div class="skill-card"><span>Machine Learning</span></div>
       </div>
     </section>
   </div>
 
   <footer id="contact">
-    <p>📧 shivam@example.com | 🌐 www.linkedin.com/in/shivamsingh</p>
-    <p>© 2025 Shivam Singh</p>
+    <p>📧 shivam@example.com | 🌐 linkedin.com/in/shivamsingh</p>
+    <p>© 2025 Shivam Singh. All Rights Reserved.</p>
   </footer>
 
 </body>
 </html>
-
